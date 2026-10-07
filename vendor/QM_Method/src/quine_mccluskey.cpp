@@ -181,9 +181,12 @@ std::vector<implicant>
 quine_mccluskey::generate_prime_implicants()
 {
     prime_implicants.clear();
+    combination_rounds.clear();
 
     std::vector<implicant> current =
         create_initial_implicants();
+
+    combination_rounds.push_back(current);
 
     while (!current.empty())
     {
@@ -227,9 +230,21 @@ quine_mccluskey::generate_prime_implicants()
         }
 
         current = next;
+
+        if (!current.empty())
+        {
+            combination_rounds.push_back(current);
+        }
     }
 
     return prime_implicants;
+}
+
+
+const std::vector<std::vector<implicant>>&
+quine_mccluskey::get_combination_rounds() const
+{
+    return combination_rounds;
 }
 
 

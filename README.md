@@ -13,7 +13,7 @@ The interface is built with Next.js, React, TypeScript, CSS, Motion, and React T
 
 ## Source repositories
 
-- [QM_Method](https://github.com/HarneetSinghBajwa/QM_Method): original C++ Quine–McCluskey, implicant, prime chart, Petrick, and truth-table source is preserved in `vendor/QM_Method`. `lib/qm.ts` is a TypeScript adapter/port of the combination and minimum-cover path so the application can run in a Vercel Node.js function. Keep the C++ project as the algorithm reference when changing this adapter.
+- [QM_Method](https://github.com/HarneetSinghBajwa/QM_Method): the C++ Quine–McCluskey, implicant, prime chart, Petrick, expression, parser, and truth-table classes in `vendor/QM_Method` are compiled to WebAssembly. `/api/qm` calls that engine through `lib/qm-wasm.ts`; `lib/qm.ts` contains only the shared input and result types. The small wrapper serializes the existing C++ classes and records rounds inside the C++ combination loop.
 - [vera-verilog-codes](https://github.com/HarneetSinghBajwa/vera-verilog-codes): the repository's module manifest, synthesizable RTL, and license are included in `data/verilog`. Module metadata is loaded directly from the manifest.
 
 The QM_Method repository does not currently provide a machine-readable web library or license file. Its source is retained with repository attribution. Review its licensing with its maintainer before redistributing beyond this project.
@@ -46,7 +46,19 @@ npm run build
 npm run start
 ```
 
-The deterministic minimizer is also exposed at `POST /api/qm`, accepting `variableCount`, `minterms`, and optional `dontCares` and returning combination rounds, prime implicants, essential/selected cover, a minimized expression, and truth table.
+The deterministic minimizer is exposed at `POST /api/qm`, accepting `variableCount`, `minterms`, and optional `dontCares`. Its response contains the C++ QM rounds, prime implicants and chart, essential and selected cover, minimum SOP, C++-generated truth table, and truth-table verification result.
+
+### QM_METHOD WebAssembly development
+
+Install the official Emscripten SDK and Visual Studio C++ Build Tools. Build the generated single-file engine and native runner with:
+
+```powershell
+npm run build:qm-wasm -- -EmsdkPath C:\path\to\emsdk
+npm run build:qm-native
+node tests/validate-qm-wasm.mjs
+```
+
+`build:qm-wasm` writes `lib/qm-engine.mjs`, a modularized Node.js-compatible Emscripten artifact with its WASM payload embedded. The production build consumes that checked-in artifact and does not need an Emscripten installation. `validate-qm-wasm.mjs` compares complete native C++ and WASM JSON results over representative edge cases.
 
 ## Deploy to Vercel
 

@@ -139,6 +139,26 @@ bool truth_table::verify(
         std::vector<int> input =
             row_to_input(row);
 
+        unsigned int minterm = 0;
+
+        for (int bit : input)
+        {
+            minterm = (minterm << 1) |
+                static_cast<unsigned int>(bit);
+        }
+
+        // Don't-care rows are unconstrained and must not fail
+        // equivalence verification when the minimized function
+        // assigns them either output value.
+        if (std::find(
+                function.dont_cares.begin(),
+                function.dont_cares.end(),
+                minterm
+            ) != function.dont_cares.end())
+        {
+            continue;
+        }
+
         bool original =
             evaluate_original(input);
 
