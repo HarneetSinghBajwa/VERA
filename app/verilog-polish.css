@@ -249,24 +249,24 @@ html {
 /* Shared detail-page contrast lift: preserve the dark palette while bringing
    source, controls, metadata, and supporting copy forward from the background. */
 .detail-page .code-window {
-  border-color: #94e2ffad;
-  background: #1d3543;
+  border-color: #a7ecffcf;
+  background: #294654;
 }
 
 .detail-page .code-toolbar {
-  color: #f1f8fc;
-  background: linear-gradient(90deg, #29495a, #223b49 70%);
+  color: #ffffff;
+  background: linear-gradient(90deg, #315668, #294654 70%);
 }
 
 .detail-page .code-status,
 .source-tabs button {
-  color: #eff8fc;
+  color: #ffffff;
 }
 
 .source-tabs button[aria-selected="true"] {
   color: #ffffff;
-  border-color: #9be5ff;
-  background: #42b8e34a;
+  border-color: #b5f2ff;
+  background: #42b8e35c;
 }
 
 .detail-page .copy-source {
@@ -276,17 +276,17 @@ html {
 }
 
 .detail-page .code-source-panel {
-  background: radial-gradient(ellipse at 12% 0%, #315c7388, transparent 52%), #203b4a;
+  background: radial-gradient(ellipse at 12% 0%, #4d809888, transparent 52%), #31586b;
 }
 
 .detail-page .code-body {
-  color: #f5fbff !important;
-  background-color: #203b4a !important;
+  color: #ffffff !important;
+  background-color: #31586b !important;
 }
 
 .detail-page .line-no {
-  color: #d3e5ee;
-  border-right-color: #bbd4e37a;
+  color: #f3f9fc;
+  border-right-color: #dcf0f8b5;
 }
 
 .detail-page .detail-aside .aside-panel {
@@ -302,6 +302,15 @@ html {
 .detail-page .detail-aside dd,
 .detail-page .related-panel a {
   color: #f5f9fb;
+}
+
+.detail-page .detail-aside .aside-panel dl {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+}
+
+.detail-page .detail-aside dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .detail-page .related-panel a {
