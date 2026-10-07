@@ -3,7 +3,6 @@
 import { memo, useEffect, useRef, useState } from "react";
 import { Highlight, Prism } from "prism-react-renderer";
 import { Check, Copy } from "lucide-react";
-import { Explain } from "@/components/explain";
 
 type Source = "rtl" | "testbench";
 
@@ -51,13 +50,9 @@ const HighlightedSource = memo(function HighlightedSource({ code }: { code: stri
 export function CodeView({
   code,
   testbenchCode,
-  context,
-  testbenchContext,
 }: {
   code: string;
   testbenchCode: string | null;
-  context: string;
-  testbenchContext?: string;
 }) {
   const [source, setSource] = useState<Source>("rtl");
   const [copied, setCopied] = useState(false);
@@ -150,10 +145,6 @@ export function CodeView({
             </div>
           )}
         </div>
-      </div>
-      <div className="detail-bottom">
-        <span>{source === "testbench" ? (hasTestbench ? "VERA REPOSITORY TESTBENCH" : "TESTBENCH NOT INCLUDED") : "CURATED FROM VERA VERILOG"}</span>
-        <Explain context={source === "testbench" && hasTestbench ? (testbenchContext ?? context) : context} label="Explain this design" />
       </div>
     </>
   );

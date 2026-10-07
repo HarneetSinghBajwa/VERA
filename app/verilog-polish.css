@@ -249,58 +249,59 @@ html {
 /* Shared detail-page contrast lift: preserve the dark palette while bringing
    source, controls, metadata, and supporting copy forward from the background. */
 .detail-page .code-window {
-  border-color: #8bdcff80;
-  background: #172936;
+  border-color: #94e2ffad;
+  background: #1d3543;
 }
 
 .detail-page .code-toolbar {
-  color: #e0edf4;
-  background: linear-gradient(90deg, #1b3342, #172833 70%);
+  color: #f1f8fc;
+  background: linear-gradient(90deg, #29495a, #223b49 70%);
 }
 
 .detail-page .code-status,
 .source-tabs button {
-  color: #d7e5ed;
+  color: #eff8fc;
 }
 
 .source-tabs button[aria-selected="true"] {
   color: #ffffff;
-  border-color: #83dcffb0;
-  background: #42b8e32b;
+  border-color: #9be5ff;
+  background: #42b8e34a;
 }
 
 .detail-page .copy-source {
-  border-color: #a8d9eb9c;
-  color: #f1f8fc;
-  background-color: #b9eaff0d;
+  border-color: #b5e8f8c9;
+  color: #ffffff;
+  background-color: #b9eaff1a;
 }
 
 .detail-page .code-source-panel {
-  background: radial-gradient(ellipse at 12% 0%, #22465c88, transparent 52%), #172936;
+  background: radial-gradient(ellipse at 12% 0%, #315c7388, transparent 52%), #203b4a;
 }
 
 .detail-page .code-body {
-  color: #f2f7fa;
+  color: #f5fbff !important;
+  background-color: #203b4a !important;
 }
 
 .detail-page .line-no {
-  color: #c0d1dc;
-  border-right-color: #bbd4e34d;
+  color: #d3e5ee;
+  border-right-color: #bbd4e37a;
 }
 
 .detail-page .detail-aside .aside-panel {
-  border-color: #8bdcff65;
-  background: linear-gradient(145deg, #182b37, #14232d);
+  border-color: #8bdcff88;
+  background: linear-gradient(145deg, #203744, #1a303c);
 }
 
 .detail-page .detail-aside .aside-panel > span,
 .detail-page .detail-aside dt {
-  color: #c2d7e2;
+  color: #d9e8ef;
 }
 
 .detail-page .detail-aside dd,
 .detail-page .related-panel a {
-  color: #edf5f9;
+  color: #f5f9fb;
 }
 
 .detail-page .related-panel a {
@@ -308,11 +309,11 @@ html {
 }
 
 .detail-page .detail-aside .source-note {
-  color: #d0dce3;
+  color: #e1eaf0;
 }
 
 .detail-page .detail-aside .source-note a {
-  color: #b0eaff;
+  color: #c4efff;
 }
 
 .detail-page .explain-callout b {
