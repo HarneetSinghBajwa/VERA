@@ -263,6 +263,11 @@ html {
   color: #ffffff;
 }
 
+.detail-page .code-status,
+.detail-page .source-tabs button {
+  color: #ffffff !important;
+}
+
 .source-tabs button[aria-selected="true"] {
   color: #ffffff;
   border-color: #b5f2ff;
@@ -300,12 +305,12 @@ html {
 
 .detail-page .detail-aside .aside-panel > span,
 .detail-page .detail-aside dt {
-  color: #d9e8ef;
+  color: #f3f8fb;
 }
 
 .detail-page .detail-aside dd,
 .detail-page .related-panel a {
-  color: #f5f9fb;
+  color: #ffffff;
 }
 
 .detail-page .detail-aside .aside-panel dl {
@@ -322,11 +327,11 @@ html {
 }
 
 .detail-page .detail-aside .source-note {
-  color: #e1eaf0;
+  color: #f3f8fb;
 }
 
 .detail-page .detail-aside .source-note a {
-  color: #c4efff;
+  color: #ffffff;
 }
 
 .detail-page .explain-callout b {
