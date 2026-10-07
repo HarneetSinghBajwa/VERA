@@ -7,8 +7,11 @@ export function getDesign(slug: string) {
   const design = designs.find((item) => item.name === slug);
   if (!design) return null;
   const code = fs.readFileSync(path.join(root, design.file), "utf8");
+  const testbenchCode = design.testbench
+    ? fs.readFileSync(path.join(root, design.testbench), "utf8")
+    : null;
   const title = design.name.split("_").map((word) => word[0]?.toUpperCase() + word.slice(1)).join(" ");
-  return { ...design, title, code, description: descriptions[slug] ?? `A ${design.level} ${design.category.toLowerCase()} design demonstrating ${design.concepts.join(", ").replaceAll("_", " ")}.` };
+  return { ...design, title, code, testbenchCode, description: descriptions[slug] ?? `A ${design.level} ${design.category.toLowerCase()} design demonstrating ${design.concepts.join(", ").replaceAll("_", " ")}.` };
 }
 const descriptions: Record<string,string> = {
   and_gate: "The AND gate outputs HIGH only when both inputs are HIGH. It is the smallest building block for expressing logical conditions in hardware.",

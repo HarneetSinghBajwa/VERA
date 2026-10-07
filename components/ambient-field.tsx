@@ -9,13 +9,18 @@ export function AmbientField() {
     const element = field.current;
     if (!element || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let frame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
     const move = (event: PointerEvent) => {
-      cancelAnimationFrame(frame);
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (frame) return;
       frame = requestAnimationFrame(() => {
-        element.style.setProperty("--pointer-x", `${(event.clientX / window.innerWidth) * 100}%`);
-        element.style.setProperty("--pointer-y", `${(event.clientY / window.innerHeight) * 100}%`);
-        element.style.setProperty("--shift-x", `${(event.clientX / window.innerWidth - .5) * -18}px`);
-        element.style.setProperty("--shift-y", `${(event.clientY / window.innerHeight - .5) * -12}px`);
+        frame = 0;
+        element.style.setProperty("--pointer-x", `${(pointerX / window.innerWidth) * 100}%`);
+        element.style.setProperty("--pointer-y", `${(pointerY / window.innerHeight) * 100}%`);
+        element.style.setProperty("--shift-x", `${(pointerX / window.innerWidth - .5) * -18}px`);
+        element.style.setProperty("--shift-y", `${(pointerY / window.innerHeight - .5) * -12}px`);
       });
     };
     window.addEventListener("pointermove", move, { passive: true });
