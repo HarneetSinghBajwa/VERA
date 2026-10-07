@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.0",
+  "project": "vera-verilog",
+  "description": "Beginner-first Verilog RTL corpus for digital design.",
+  "modules": [
+    {
+      "name": "and_gate",
+      "file": "src/gates/and_gate.v",
+      "category": "Logic Gates",
+      "level": "beginner",
+      "concepts": [
+        "boolean_logic",
+        "and"
+      ],
+      "testbench": "testbench/gates/and_gate_tb.v"
+    },
+    {
+      "name": "or_gate",
+      "file": "src/gates/or_gate.v",
+      "category": "Logic Gates",
+      "level": "beginner",
+      "concepts": [
+        "boolean_logic",
+        "or"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "not_gate",
+      "file": "src/gates/not_gate.v",
+      "category": "Logic Gates",
+      "level": "beginner",
+      "concepts": [
+        "boolean_logic",
+        "inversion"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "nand_gate",
+      "file": "src/gates/nand_gate.v",
+      "category": "Logic Gates",
+      "level": "beginner",
+      "concepts": [
+        "boolean_logic",
+        "universal_gate"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "nor_gate",
+      "file": "src/gates/nor_gate.v",
+      "category": "Logic Gates",
+      "level": "beginner",
+      "concepts": [
+        "boolean_logic",
+        "universal_gate"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "xor_gate",
+      "file": "src/gates/xor_gate.v",
+      "category": "Logic Gates",
+      "level": "beginner",
+      "concepts": [
+        "boolean_logic",
+        "exclusive_or"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "xnor_gate",
+      "file": "src/gates/xnor_gate.v",
+      "category": "Logic Gates",
+      "level": "beginner",
+      "concepts": [
+        "boolean_logic",
+        "equivalence"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "mux_2to1",
+      "file": "src/mux/mux_2to1.v",
+      "category": "Multiplexers",
+      "level": "beginner",
+      "concepts": [
+        "selection",
+        "multiplexer"
+      ],
+      "testbench": "testbench/mux/mux_2to1_tb.v"
+    },
+    {
+      "name": "mux_4to1",
+      "file": "src/mux/mux_4to1.v",
+      "category": "Multiplexers",
+      "level": "beginner",
+      "concepts": [
+        "selection",
+        "multiplexer"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "mux_8to1",
+      "file": "src/mux/mux_8to1.v",
+      "category": "Multiplexers",
+      "level": "beginner",
+      "concepts": [
+        "selection",
+        "multiplexer"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "mux_4to1_structural",
+      "file": "src/mux/mux_4to1_structural.v",
+      "category": "Multiplexers",
+      "level": "beginner",
+      "concepts": [
+        "hierarchy",
+        "multiplexer"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "decoder_2to4",
+      "file": "src/decoder/decoder_2to4.v",
+      "category": "Decoders",
+      "level": "beginner",
+      "concepts": [
+        "decoding",
+        "one_hot"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "decoder_3to8",
+      "file": "src/decoder/decoder_3to8.v",
+      "category": "Decoders",
+      "level": "beginner",
+      "concepts": [
+        "decoding",
+        "one_hot"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "encoder_4to2",
+      "file": "src/encoder/encoder_4to2.v",
+      "category": "Encoders",
+      "level": "beginner",
+      "concepts": [
+        "encoding"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "priority_encoder_4to2",
+      "file": "src/encoder/priority_encoder_4to2.v",
+      "category": "Encoders",
+      "level": "beginner",
+      "concepts": [
+        "priority",
+        "encoding"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "half_adder",
+      "file": "src/arithmetic/half_adder.v",
+      "category": "Arithmetic",
+      "level": "beginner",
+      "concepts": [
+        "addition",
+        "xor",
+        "carry"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "full_adder",
+      "file": "src/arithmetic/full_adder.v",
+      "category": "Arithmetic",
+      "level": "beginner",
+      "concepts": [
+        "addition",
+        "carry"
+      ],
+      "testbench": "testbench/arithmetic/full_adder_tb.v"
+    },
+    {
+      "name": "half_subtractor",
+      "file": "src/arithmetic/half_subtractor.v",
+      "category": "Arithmetic",
+      "level": "beginner",
+      "concepts": [
+        "subtraction",
+        "borrow"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "full_subtractor",
+      "file": "src/arithmetic/full_subtractor.v",
+      "category": "Arithmetic",
+      "level": "beginner",
+      "concepts": [
+        "subtraction",
+        "borrow"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "ripple_carry_adder_4bit",
+      "file": "src/arithmetic/ripple_carry_adder_4bit.v",
+      "category": "Arithmetic",
+      "level": "beginner",
+      "concepts": [
+        "addition",
+        "carry_propagation",
+        "hierarchy"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "adder_subtractor_4bit",
+      "file": "src/arithmetic/adder_subtractor_4bit.v",
+      "category": "Arithmetic",
+      "level": "beginner",
+      "concepts": [
+        "addition",
+        "subtraction",
+        "twos_complement"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "alu_4bit",
+      "file": "src/alu/alu_4bit.v",
+      "category": "ALU",
+      "level": "beginner",
+      "concepts": [
+        "alu",
+        "arithmetic",
+        "logic"
+      ],
+      "testbench": "testbench/alu/alu_4bit_tb.v"
+    },
+    {
+      "name": "d_latch",
+      "file": "src/sequential/d_latch.v",
+      "category": "Sequential Logic",
+      "level": "beginner",
+      "concepts": [
+        "storage",
+        "latch"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "d_flip_flop",
+      "file": "src/sequential/d_flip_flop.v",
+      "category": "Sequential Logic",
+      "level": "beginner",
+      "concepts": [
+        "storage",
+        "clock"
+      ],
+      "testbench": "testbench/sequential/d_flip_flop_tb.v"
+    },
+    {
+      "name": "d_flip_flop_reset",
+      "file": "src/sequential/d_flip_flop_reset.v",
+      "category": "Sequential Logic",
+      "level": "beginner",
+      "concepts": [
+        "storage",
+        "reset"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "d_flip_flop_enable",
+      "file": "src/sequential/d_flip_flop_enable.v",
+      "category": "Sequential Logic",
+      "level": "beginner",
+      "concepts": [
+        "storage",
+        "enable"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "jk_flip_flop",
+      "file": "src/sequential/jk_flip_flop.v",
+      "category": "Sequential Logic",
+      "level": "beginner",
+      "concepts": [
+        "storage",
+        "jk"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "t_flip_flop",
+      "file": "src/sequential/t_flip_flop.v",
+      "category": "Sequential Logic",
+      "level": "beginner",
+      "concepts": [
+        "storage",
+        "toggle"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "register_4bit",
+      "file": "src/registers/register_4bit.v",
+      "category": "Registers",
+      "level": "beginner",
+      "concepts": [
+        "register",
+        "storage"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "shift_register_siso_4bit",
+      "file": "src/registers/shift_register_siso_4bit.v",
+      "category": "Registers",
+      "level": "beginner",
+      "concepts": [
+        "shift_register",
+        "serial"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "shift_register_sipo_4bit",
+      "file": "src/registers/shift_register_sipo_4bit.v",
+      "category": "Registers",
+      "level": "beginner",
+      "concepts": [
+        "shift_register",
+        "serial_to_parallel"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "shift_register_piso_4bit",
+      "file": "src/registers/shift_register_piso_4bit.v",
+      "category": "Registers",
+      "level": "beginner",
+      "concepts": [
+        "shift_register",
+        "parallel_to_serial"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "up_counter_4bit",
+      "file": "src/counters/up_counter_4bit.v",
+      "category": "Counters",
+      "level": "beginner",
+      "concepts": [
+        "counter",
+        "sequential"
+      ],
+      "testbench": "testbench/counters/up_counter_4bit_tb.v"
+    },
+    {
+      "name": "down_counter_4bit",
+      "file": "src/counters/down_counter_4bit.v",
+      "category": "Counters",
+      "level": "beginner",
+      "concepts": [
+        "counter",
+        "sequential"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "up_down_counter_4bit",
+      "file": "src/counters/up_down_counter_4bit.v",
+      "category": "Counters",
+      "level": "beginner",
+      "concepts": [
+        "counter",
+        "sequential"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "sequence_detector_1011_moore",
+      "file": "src/fsm/sequence_detector_1011_moore.v",
+      "category": "Finite State Machines",
+      "level": "beginner",
+      "concepts": [
+        "fsm",
+        "moore",
+        "sequence_detection"
+      ],
+      "testbench": null
+    },
+    {
+      "name": "sequence_detector_1011_mealy",
+      "file": "src/fsm/sequence_detector_1011_mealy.v",
+      "category": "Finite State Machines",
+      "level": "beginner",
+      "concepts": [
+        "fsm",
+        "mealy",
+        "sequence_detection"
+      ],
+      "testbench": null
+    }
+  ]
+}
