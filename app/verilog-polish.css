@@ -284,6 +284,10 @@ html {
   background-color: #31586b !important;
 }
 
+.detail-page .code-body .token {
+  filter: brightness(1.35);
+}
+
 .detail-page .line-no {
   color: #f3f9fc;
   border-right-color: #dcf0f8b5;

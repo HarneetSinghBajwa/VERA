@@ -21,12 +21,12 @@ Prism.languages.verilog = {
 const verilogTheme = {
   plain: { color: "#ffffff", backgroundColor: "#31586b" },
   styles: [
-    { types: ["comment"], style: { color: "#e4f1f6", fontStyle: "italic" as const } },
-    { types: ["keyword"], style: { color: "#a6f0ff", fontWeight: "600" as const } },
-    { types: ["number"], style: { color: "#ffe6bf" } },
-    { types: ["string"], style: { color: "#def8cb" } },
-    { types: ["operator"], style: { color: "#ffd0a8" } },
-    { types: ["punctuation"], style: { color: "#f4f9fc" } },
+    { types: ["comment"], style: { color: "#edf7fb", fontStyle: "italic" as const } },
+    { types: ["keyword"], style: { color: "#d0f7ff", fontWeight: "600" as const } },
+    { types: ["number"], style: { color: "#fff2df" } },
+    { types: ["string"], style: { color: "#eaffdc" } },
+    { types: ["operator"], style: { color: "#ffe7d0" } },
+    { types: ["punctuation"], style: { color: "#f9fcfe" } },
   ],
 };
 
