@@ -7,6 +7,12 @@ html {
   padding-block: 38px 30px;
 }
 
+.detail-page {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+
 .detail-page .detail-head h1 {
   color: #f3f8fc;
   font-size: clamp(48px, 4.6vw, 64px);
@@ -41,8 +47,8 @@ html {
 
 .detail-page .code-window {
   border-color: #82cce755;
-  background: #0d1720;
-  box-shadow: 0 20px 70px #0005, inset 0 1px #d5f4ff0a;
+  background: #111c26;
+  box-shadow: 0 12px 34px #0004, inset 0 1px #d5f4ff0a;
 }
 
 .detail-page .code-toolbar {
@@ -142,7 +148,7 @@ html {
 
 .detail-page .code-source-panel {
   min-height: 240px;
-  background: radial-gradient(ellipse at 12% 0%, #17324455, transparent 52%), #0d1720;
+  background: radial-gradient(ellipse at 12% 0%, #17324466, transparent 52%), #111c26;
 }
 
 .detail-page .code-body {
@@ -206,6 +212,13 @@ html {
   font-size: 12px;
 }
 
+.detail-page .detail-aside .aside-panel {
+  padding: 17px 16px;
+  border: 1px solid #82cce736;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #111b25, #0e171f);
+}
+
 .detail-page .detail-aside dd,
 .detail-page .related-panel a {
   color: #d6e3eb;
@@ -242,6 +255,19 @@ html {
   animation: plane-float-safe 34s ease-in-out infinite alternate;
 }
 
+.ambient-ribbons {
+  filter: none;
+}
+
+.library-grid .design-card {
+  transition: background .25s, border-color .25s, transform .25s;
+}
+
+.library-grid .design-card:hover {
+  padding-left: 18px;
+  transform: translateX(5px);
+}
+
 @keyframes plane-float-safe {
   from {
     transform: rotateX(62deg) translate3d(var(--shift-x, 0px), var(--shift-y, 0px), 0);
@@ -266,6 +292,11 @@ html {
 }
 
 @media (max-width: 680px) {
+  .library-grid .design-card:hover {
+    padding-left: 12px;
+    transform: translateX(3px);
+  }
+
   .detail-page .detail-head {
     padding-block: 27px 22px;
   }

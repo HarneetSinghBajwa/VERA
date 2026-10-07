@@ -20,7 +20,7 @@ Prism.languages.verilog = {
 };
 
 const verilogTheme = {
-  plain: { color: "#eaf3f8", backgroundColor: "#0d1720" },
+  plain: { color: "#eaf3f8", backgroundColor: "#111c26" },
   styles: [
     { types: ["comment"], style: { color: "#a9c0ce", fontStyle: "italic" as const } },
     { types: ["keyword"], style: { color: "#85ddff", fontWeight: "600" as const } },
