@@ -374,4 +374,8 @@ Those are future directions only and are not current V1 capabilities.
 
 Repository: https://github.com/HarneetSinghBajwa/VERA
 
+<<<<<<< HEAD
 **Vera — Digital Design, Explained Visually.**
+=======
+**Vera — Digital Design, Explained Visually.**
+>>>>>>> e76faa7 (STABLIZING API)
