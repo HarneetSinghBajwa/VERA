@@ -56,10 +56,10 @@ export function CodeView({
 }) {
   const [source, setSource] = useState<Source>("rtl");
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState("");
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const rtlTab = useRef<HTMLButtonElement>(null);
   const testbenchTab = useRef<HTMLButtonElement>(null);
-  const hasTestbench = Boolean(testbenchCode);
   const activeCode = source === "testbench" ? testbenchCode : code;
 
   useEffect(() => () => {
@@ -69,6 +69,7 @@ export function CodeView({
   function selectSource(next: Source) {
     setSource(next);
     setCopied(false);
+    setCopyError("");
   }
 
   function moveTab(event: React.KeyboardEvent<HTMLDivElement>) {
@@ -88,10 +89,12 @@ export function CodeView({
     try {
       await navigator.clipboard.writeText(activeCode);
       setCopied(true);
+      setCopyError("");
       if (timer.current) clearTimeout(timer.current);
       timer.current = setTimeout(() => setCopied(false), 1600);
     } catch {
       setCopied(false);
+      setCopyError("Copy was unavailable. You can still select the source and copy it manually.");
     }
   }
 
@@ -124,7 +127,7 @@ export function CodeView({
               >TESTBENCH</button>
             </div>
           </div>
-          <button className="copy-source" type="button" onClick={copy} disabled={!activeCode}>
+          <button className="copy-source" type="button" onClick={copy} disabled={!activeCode} aria-label="Copy active Verilog source">
             {copied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
             {copied ? "COPIED" : "COPY CODE"}
           </button>
@@ -145,6 +148,9 @@ export function CodeView({
             </div>
           )}
         </div>
+      </div>
+      <div className="copy-feedback" role="status" aria-live="polite" aria-atomic="true">
+        {copyError}
       </div>
     </>
   );

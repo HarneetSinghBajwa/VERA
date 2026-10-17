@@ -12,7 +12,7 @@ Vera connects digital-design concepts to inspectable computation:
 
 **behavior → representation → logic → circuit → RTL → verification → explanation**
 
-The application combines a Next.js/React frontend, a C++ Boolean-minimization engine compiled to WebAssembly, a data-driven Verilog corpus, and a server-side Gemini explanation route.
+The application combines a Next.js/React frontend, a C++ Boolean-minimization engine compiled to WebAssembly, a data-driven Verilog corpus, and a server-side Groq explanation route.
 
 ## Current capabilities
 
@@ -26,7 +26,7 @@ The demonstrations are implemented in the client application. For example, the b
 
 ### Verilog Codes
 
-The `/verilog` route is a searchable, categorized browser over a curated corpus of **39 Verilog designs**.
+The `/verilog` route is a searchable, categorized browser over a curated corpus of **37 Verilog designs**.
 
 Current categories include Logic Gates, Multiplexers, Decoders, Encoders, Arithmetic, ALU, Sequential Logic, Registers, Counters, and Finite State Machines.
 
@@ -102,11 +102,11 @@ Conceptually:
 
 ### Explanation flow
 
-`Fundamentals` and `Minimization` create structured context locally. `Explain` posts that context to `/api/explain`. The route calls Gemini and returns an explanation.
+`Fundamentals` and `Minimization` create structured context locally. `Explain` posts that context to `/api/explain`. The route calls the configured Groq chat-completions API and returns an explanation. Responses are not streamed; canceled and timed-out requests are handled explicitly.
 
 The model is instructed to treat supplied deterministic calculation results as authoritative, explain them without changing them, and never claim to execute Verilog.
 
-> **C++ computes. Vera presents. Gemini explains.**
+> **C++ computes. Vera presents. Groq explains.**
 
 ## API
 
@@ -140,7 +140,7 @@ Invalid input returns HTTP 400. Downstream minimization failures return HTTP 500
 
 Accepts a question and contextual text. Current limits are 800 characters for the question and 8000 characters for context.
 
-Missing `GEMINI_API_KEY` returns 503. Invalid input returns 400. Upstream model failures return 502. Unexpected server errors return 500.
+Missing `GROQ_API_KEY` returns 503. Invalid input returns 400. Oversized requests return 413. Provider rate limits return 429, provider failures return 502, and requests exceeding the 30-second server timeout return 504. The Groq key is read only by the server-side route.
 
 The key is consumed only on the server-side route and should never be exposed through a `NEXT_PUBLIC_` variable.
 
@@ -244,7 +244,7 @@ For rebuilding / validating the C++ engine:
 npm install
 ```
 
-### Configure Gemini
+### Configure Groq
 
 Windows PowerShell:
 
@@ -255,7 +255,9 @@ Copy-Item .env.example .env.local
 Then add:
 
 ```text
-GEMINI_API_KEY=your_key_here
+GROQ_API_KEY=your_key_here
+# Optional; defaults to llama-3.3-70b-versatile
+GROQ_MODEL=llama-3.3-70b-versatile
 ```
 
 ### Run
@@ -290,7 +292,7 @@ The Emscripten path may also be provided through the `EMSDK` environment variabl
 
 Vera is structured for standard Next.js hosting such as Vercel.
 
-Use the repository with the normal Next.js build command, and provide `GEMINI_API_KEY` as a server-side environment variable.
+Use the repository with the normal Next.js build command, and provide `GROQ_API_KEY` as a server-side environment variable. `GROQ_MODEL` is optional.
 
 The checked-in QM WebAssembly artifact means the deployment environment does not need Emscripten for the normal application build.
 
@@ -336,7 +338,7 @@ Vera V1 does **not currently**:
 - provide advanced RTL automation
 - generate complete Verilog designs from natural language
 - function as a general autonomous coding agent
-- use Gemini as the Boolean minimization engine
+- use Groq as the Boolean minimization engine
 
 The Verilog catalogue is a curated learning corpus, not an arbitrary HDL execution environment.
 
@@ -356,7 +358,7 @@ These limits reflect the current educational scope and implementation boundaries
 
 **Vera V1 is an active, evolving project.**
 
-The repository currently contains a 22-concept fundamentals route, a 39-design Verilog catalogue, individual RTL pages, a deterministic C++ QM engine, a checked-in WebAssembly artifact, native-vs-WASM validation, a Gemini explanation route, animated interactive UI, and a data-driven RTL manifest.
+The repository currently contains a 22-concept fundamentals route, a 37-design Verilog catalogue, individual RTL pages, a deterministic C++ QM engine, a checked-in WebAssembly artifact, native-vs-WASM validation, a Groq explanation route, animated interactive UI, and a data-driven RTL manifest.
 
 Vera is best described as a **digital design learning lab with a deterministic hardware-logic core and an AI teaching layer**.
 
@@ -374,8 +376,4 @@ Those are future directions only and are not current V1 capabilities.
 
 Repository: https://github.com/HarneetSinghBajwa/VERA
 
-<<<<<<< HEAD
 **Vera — Digital Design, Explained Visually.**
-=======
-**Vera — Digital Design, Explained Visually.**
->>>>>>> e76faa7 (STABLIZING API)

@@ -21,6 +21,7 @@ body{font-family:var(--sans);font-size:16px;line-height:1.6;color:#f0f4f6}
 .hero h1 em,.page-hero h1 em,.detail-head h1 em,h2 em,.section-heading h2 em,.feature-band h2 em,.ask-content h2 em{font-family:var(--serif);font-weight:400}
 .page-hero h1,.detail-head h1,.qm-page .page-hero h1{font-family:var(--sans);font-size:clamp(56px,5.2vw,72px);line-height:1.1;font-weight:500;letter-spacing:-.045em}
 .section-heading h2,.feature-band h2,.ask-content h2{font-family:var(--sans);font-size:clamp(40px,4vw,52px);line-height:1.12;font-weight:500;letter-spacing:-.04em}
+.explain-modal h2{font-family:var(--sans);font-size:clamp(32px,3.8vw,48px);line-height:1.1;font-weight:500;letter-spacing:-.04em}
 .module-card h3,.peek-item h3,.design-card h3{font-family:var(--sans);font-size:clamp(24px,2vw,29px);font-weight:500;line-height:1.2;letter-spacing:-.025em;text-transform:uppercase}
 .hero-sub{font-size:18px;line-height:1.6;color:#edf3f5;max-width:62ch}
 .page-hero p,.section-heading>p,.module-card>p,.feature-band p,.ask-content p,.detail-head>p,.lesson-copy,.lesson-definition-grid p,.lesson-practice-grid p,.explain-callout span,.source-note,.modal-desc,.explain-answer,.empty-state p{font-size:16px;line-height:1.6;color:#c2ccd2}
