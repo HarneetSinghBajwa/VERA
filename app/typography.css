@@ -120,7 +120,7 @@ body{font-family:var(--sans);font-size:16px;line-height:1.6;color:#f0f4f6}
 .nav-cta{font:13px/1.4 var(--mono)}
 .hero-copy .eyebrow{font-size:12px}
 .hero-copy{isolation:isolate}
-.hero-copy:before{content:"";position:absolute;z-index:-1;inset:-12% -14%;border-radius:50%;background:radial-gradient(ellipse at center,rgba(4,8,11,.94) 0%,rgba(4,8,11,.78) 38%,rgba(4,8,11,.34) 64%,transparent 80%);pointer-events:none}
+.hero-copy:before{content:"";position:absolute;z-index:-1;inset:-12% -14%;border-radius:50%;background:radial-gradient(ellipse at center,rgba(4,8,11,.94) 0%,rgba(4,8,11,.78) 38%,rgba(4,8,11,.34) 64%,transparent 80%);filter:blur(24px);pointer-events:none}
 .page-hero,.detail-head,.section-heading{isolation:isolate}
 .page-hero:before,.detail-head:before,.section-heading:before{content:"";position:absolute;z-index:-1;inset:-10% -8%;border-radius:32%;background:radial-gradient(ellipse at 24% 48%,rgba(5,9,13,.95) 0%,rgba(5,9,13,.84) 43%,rgba(5,9,13,.48) 68%,transparent 88%);filter:blur(25px);pointer-events:none}
 .hero-coordinate span{font-size:11px;color:#afc1c8}
